@@ -198,6 +198,12 @@ while(!$bhsm_rep->endFile()) {
 }
 
 $bhsm_rep->close();
+
+//get the max values and hour for each day
+$sql= "SELECT date, time, MAX(total_submit_sm) as bhsm
+FROM bhsm_report
+GROUP BY date 
+ORDER BY bhsm DESC";
 //*/
 
 
